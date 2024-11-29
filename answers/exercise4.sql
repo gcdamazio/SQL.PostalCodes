@@ -57,3 +57,9 @@ mysql> SELECT state,COUNT(county) AS county_count FROM zipcodes GROUP BY state O
 | Wisconsin            |          772 |
 | Wyoming              |          178 |
 +----------------------+--------------+
+
+FIXING DATA
+
+Write a query that locates the correct values and updates the FALSE and NULL values.
+
+mysql> SELECT city,state,county, timezone, COUNT(*) AS instance_count FROM zipcodes WHERE timezone IS NOT NULL GROUP BY city, state, county,timezone ORDER BY city,state, county, instance_count DESC;
